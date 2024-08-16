@@ -105,7 +105,7 @@ raisedCard.innerHTML = `
 const gamesCard = document.getElementById("num-games");
 
 // access gamesContainer from before, get the count
-const gamesCount = gamesContainer.childElementCount;
+const gamesCount = gamesContainer.childElementCount
 
 // change innerHTML of gamesCard
 gamesCard.innerHTML = `
@@ -180,10 +180,15 @@ allBtn.addEventListener('click', showAllGames);
 // grab the description container
 const descriptionContainer = document.getElementById("description-container");
 
-// use filter or reduce to count the number of unfunded games
+const numOfUnfundedGames = GAMES_JSON.filter((game) => {
+  return game.goal > game.pledged;  
+}).length //output: 7
 
+const displayStr = `A total of $${totalRaised.toLocaleString()} has been raised for ${gamesCount} games. Currently ${numOfUnfundedGames != 1 ? `${numOfUnfundedGames} games remain unfunded. We need your help to fund these amazing games!` : `${numOfUnfundedGames} game remains unfunded. We need your help to fund this amazing game!`}`
 
-// create a string that explains the number of unfunded games using the ternary operator
+descriptionContainer.innerHTML = `
+    <p>${displayStr}</p>
+`
 
 
 // create a new DOM element containing the template string and append it to the description container
