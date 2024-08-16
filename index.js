@@ -191,7 +191,7 @@ newElement.innerHTML = displayStr
 descriptionContainer.appendChild(newElement)
 
 
-// create a new DOM element containing the template string and append it to the description container
+
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
@@ -205,7 +205,23 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
     return item2.pledged - item1.pledged;
 });
 
-// use destructuring and the spread operator to grab the first and second games
+// destructured
+const [firstGame, secondGame,,] = sortedGames
+
+let topFunded = document.createElement('p')
+let firTopGame = `
+    <p>${firstGame.name}</p>
+`
+topFunded.innerHTML = firTopGame
+firstGameContainer.appendChild(topFunded)
+
+let secFunded = document.createElement('p')
+let secTopGame = `
+    <p>${secondGame.name}</p>
+`
+secFunded.innerHTML = secTopGame
+secondGameContainer.appendChild(secFunded)
+
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
 
