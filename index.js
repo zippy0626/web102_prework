@@ -17,32 +17,37 @@ function deleteChildElements(parent) {
     }
 }
 
+
+
 /*****************************************************************************
  * Challenge 3: Add data about each game as a card to the games-container
  * Skills used: DOM manipulation, for loops, template literals, functions
 */
 
-// grab the element with the id games-container
 const gamesContainer = document.getElementById("games-container");
 
 // create a function that adds all data from the games array to the page
+
 function addGamesToPage(games) {
     for (let i = 0; i < games.length; i++) {
-        // game in {}
+        
+        // game object from parsed array/list
         let game = games[i];
         
-        // new div for each game
+        // new div tag
         let gameCard = document.createElement('div');
+
         // add class to classlist of each gameCard
         gameCard.classList.add("game-card");
 
-        // going inside each gameCard div content (empty rn) and adding html tags/content
+        // going inside each gameCard's div content (empty rn) and adding html tags/content
+        // USE BACKTICK not quotes, backtick is on tilde key
         gameCard.innerHTML = `
         <img src="${game.img}" alt="${game.name}" class = "game-img">
         <h2>${game.name}</h2>
         <p>${game.description}</p>
-        <p>Pledged: ${game.pledged.toString()}</p>
-        <p>Goal: ${game.goal.toString()}</p>
+        <p>Pledged: ${game.pledged.toLocaleString('en-US')}</p>
+        <p>Goal: ${game.goal.toLocaleString('en-US')}</p>
         `;
 
         // append
@@ -53,6 +58,9 @@ function addGamesToPage(games) {
 // call the function we just defined using the correct variable
 // later, we'll call this function using a different list of games
 addGamesToPage(GAMES_JSON);
+// GAMES_JSON is a list with dictionaries inside it
+
+
 
 /*************************************************************************************
  * Challenge 4: Create the summary statistics at the top of the page displaying the
@@ -63,20 +71,38 @@ addGamesToPage(GAMES_JSON);
 // grab the contributions card element
 const contributionsCard = document.getElementById("num-contributions");
 
-// use reduce() to count the number of total contributions by summing the backers
+const totalBackers = GAMES_JSON.reduce((acc, game) => {
+    return acc += game.backers;
+}, 0); //forgot 0 here meaning accumulation = 0
 
-
-// set the inner HTML using a template literal and toLocaleString to get a number with commas
+contributionsCard.innerHTML = `
+    <p>${totalBackers.toLocaleString('en-US')}</p>
+`;
 
 
 // grab the amount raised card, then use reduce() to find the total amount raised
 const raisedCard = document.getElementById("total-raised");
 
-// set inner HTML using template literal
+const totalRaised = GAMES_JSON.reduce((acc, game) => {
+    return acc += game.pledged;
+}, 0);
+
+raisedCard.innerHTML = `
+    <p>${totalRaised.toLocaleString('en-US')}</p>
+`
 
 
 // grab number of games card and set its inner HTML
 const gamesCard = document.getElementById("num-games");
+
+// access gamesContainer from before, get the count
+const gamesCount = gamesContainer.childElementCount
+
+// change innerHTML of gamesCard
+gamesCard.innerHTML = `
+    <p>${gamesCount.toLocaleString('en-US')}</p>
+`;
+
 
 
 /*************************************************************************************
@@ -88,6 +114,7 @@ const gamesCard = document.getElementById("num-games");
 // show only games that do not yet have enough funding
 function filterUnfundedOnly() {
     deleteChildElements(gamesContainer);
+    
 
     // use filter() to get a list of games that have not yet met their goal
 
@@ -121,6 +148,7 @@ const fundedBtn = document.getElementById("funded-btn");
 const allBtn = document.getElementById("all-btn");
 
 // add event listeners with the correct functions to each button
+
 
 
 /*************************************************************************************
