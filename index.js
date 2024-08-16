@@ -186,9 +186,9 @@ const numOfUnfundedGames = GAMES_JSON.filter((game) => {
 
 const displayStr = `A total of $${totalRaised.toLocaleString()} has been raised for ${gamesCount} games. Currently ${numOfUnfundedGames != 1 ? `${numOfUnfundedGames} games remain unfunded. We need your help to fund these amazing games!` : `${numOfUnfundedGames} game remains unfunded. We need your help to fund this amazing game!`}`
 
-descriptionContainer.innerHTML = `
-    <p>${displayStr}</p>
-`
+let newElement = document.createElement('p')
+newElement.innerHTML = displayStr
+descriptionContainer.appendChild(newElement)
 
 
 // create a new DOM element containing the template string and append it to the description container
