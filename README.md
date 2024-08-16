@@ -1,10 +1,10 @@
 # WEB102 Prework - *Name of App Here*
 
-Submitted by: **Your Name Here**
+Submitted by: **Michael Too**
 
-**Name of your app** is a website for the company Sea Monster Crowdfunding that displays information about the games they have funded.
+**Sea Monster** is a website for the company Sea Monster Crowdfunding that displays information about the games they have funded.
 
-Time spent: **X** hours spent in total
+Time spent: **7** hours spent in total
 
 ## Required Features
 
@@ -17,7 +17,8 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-* [ ] List anything else that you can get done to improve the app functionality!
+-Improved CSS, added hover and smoothness
+
 
 ## Video Walkthrough
 
@@ -26,7 +27,7 @@ Here's a walkthrough of implemented features:
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+GIF created with Ubuntu Screen Recording  
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -35,6 +36,12 @@ GIF created with ...
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+I felt like the instructions were very dense for my learning style, and also sometimes the instructions weren't very explicitly clear to complete. I focus on getting the intuition of x new thing then applying it to my program/code. 
+
+I felt that googling the various functions/methods/tricks in JS, like arrow functions, was way easier and more fitting for my learning.
+
+Overall, it is a very good source for learning hands on JavaScript.
 
 ## License
 
