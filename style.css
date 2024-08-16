@@ -7,11 +7,17 @@ body {
 
 #tentacles {
     width: 50px;
+    transition: all 200ms ease;
+}
+
+#tentacles:hover {
+    transform: rotate(10deg);
 }
 
 .header {
     display: flex;
     background-color: lightblue;
+    justify-content: center;
     padding: 1%;
     align-items: center;
     margin-left: -10px;
@@ -19,15 +25,20 @@ body {
     margin-top: -10px;
 }
 
+h2, p {
+    text-align: center;
+}
+
 .stats-container {
     display: flex;
     align-items: center;
+    transition: all 300ms ease;
 }
 
-.stats-container:hover {
+/* .stats-container:hover {
     cursor: pointer;
     box-shadow: 0 0 30px lightblue;
-}
+} */
 
 .stats-card {
     background-color: #a8b0bc;
@@ -36,6 +47,13 @@ body {
     margin: 1%;
     width: 100%;
     text-align: center;
+    transition: all 300ms ease;
+}
+
+.stats-card:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 6px lightblue;
+    transform: scale(1.01);
 }
 
 #num-contributions, #total-raised, #num-games {
@@ -61,11 +79,13 @@ body {
     width: 300px;
     text-align: center;
     border-radius: 7px;
+    transition: all 300ms ease;
 }
 
 .game-card:hover {
     cursor: pointer;
     box-shadow: 0 0 30px lightblue;
+    transform: scale(1.01);
 }
 
 #button-container {
@@ -78,4 +98,9 @@ button {
     padding: 1%;
     margin: 1%;
     border-radius: 7px;
+    transition: all 100ms ease;
+}
+
+#button-container button:hover {
+    transform: scale(1.03);
 }
