@@ -24,10 +24,10 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<img src='/test.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='/output.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with Peek
+GIF created with FFmpeg
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -45,7 +45,7 @@ Overall, it is a very good source for learning hands on JavaScript.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2024 Michael Too
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
