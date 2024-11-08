@@ -3,13 +3,18 @@
 body {
     font-family: 'Cabin';
     background-color: #758190;
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 #tentacles {
     width: 50px;
 }
 
-.header {
+#header {
     display: flex;
     background-color: lightblue;
     padding: 1%;
@@ -17,6 +22,8 @@ body {
     margin-left: -10px;
     margin-right: -10px;
     margin-top: -10px;
+
+    padding-left: 2rem;
 }
 
 .stats-container {
@@ -77,4 +84,43 @@ button {
     padding: 1%;
     margin: 1%;
     border-radius: 7px;
+}
+
+/* My Features */
+
+/* Logo */
+#tentacles {
+    transition: all 300ms;
+
+    margin-right: 5px;
+}
+#tentacles:hover {
+    transform: rotate(-15deg);
+}
+
+/* Back to top BTN */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bolder;
+
+    background-color: rgb(114, 160, 175);
+    color: white;
+    border-radius: 5px;
+    padding: .8rem;
+
+    height: fit-content;
+
+    user-select: none;
+    text-decoration: none;
+
+    filter: opacity(.6);
+    transition: all 300ms;
+}
+.back-to-top-btn:hover {
+    filter: none;
 }
