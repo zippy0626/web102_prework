@@ -130,7 +130,6 @@ const descriptionContainer = document.getElementById("description-container");
 const unfundedGamesCount = GAMES_JSON.filter((game) => {
     return game.pledged < game.goal;
 }).length;
-console.log(unfundedGamesCount);
 
 const displayString = `
     ${ unfundedGamesCount===1 ?
