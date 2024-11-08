@@ -60,7 +60,7 @@ contributionsCard.innerHTML = `
     ${totalBackers.toLocaleString('en-US')}
 `;
 
-// grab the amount raised card, then use reduce() to find the total amount raised
+
 const raisedCard = document.getElementById("total-raised");
 let totalMoneyRaised = GAMES_JSON.reduce((total, game) => {
     return total+=game.pledged
@@ -81,7 +81,7 @@ gamesCard.innerHTML = `
  * Skills used: functions, filter
  */
 
-// show only games that do not yet have enough funding
+
 function filterUnfundedOnly() {
   deleteChildElements(gamesContainer);
 
@@ -92,7 +92,7 @@ function filterUnfundedOnly() {
   addGamesToPage(unfundedGames);
 }
 
-// show only games that are fully funded
+
 function filterFundedOnly() {
   deleteChildElements(gamesContainer);
 
@@ -103,14 +103,14 @@ function filterFundedOnly() {
   addGamesToPage(fundedGames);
 }
 
-// show all games
+
 function showAllGames() {
   deleteChildElements(gamesContainer);
 
   addGamesToPage(GAMES_JSON);
 }
 
-// select each button in the "Our Games" section
+
 const unfundedBtn = document.getElementById("unfunded-btn");
 const fundedBtn = document.getElementById("funded-btn");
 const allBtn = document.getElementById("all-btn");
