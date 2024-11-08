@@ -34,6 +34,7 @@ function addGamesToPage(games) {
             <p>${game.name}</p>
             <img src="${game.img}" class="game-img" />
             <p>${game.description}</p>
+            <p>Backers: ${game.backers}</p>
         `;
     gamesContainer.appendChild(gameCard);
   }
@@ -48,20 +49,29 @@ addGamesToPage(GAMES_JSON);
  * Skills used: arrow functions, reduce, template literals
  */
 
-// grab the contributions card element
+
 const contributionsCard = document.getElementById("num-contributions");
-
-// use reduce() to count the number of total contributions by summing the backers
-
-// set the inner HTML using a template literal and toLocaleString to get a number with commas
+let totalBackers = GAMES_JSON.reduce((total, game) => {
+    return total+=game.backers;
+}, 0);
+contributionsCard.innerHTML = `
+    ${totalBackers.toLocaleString('en-US')}
+`;
 
 // grab the amount raised card, then use reduce() to find the total amount raised
 const raisedCard = document.getElementById("total-raised");
+let totalMoneyRaised = GAMES_JSON.reduce((total, game) => {
+    return total+=game.pledged
+}, 0);
+raisedCard.innerHTML = `
+    $${totalMoneyRaised.toLocaleString('en-US')}
+`;
 
-// set inner HTML using template literal
 
-// grab number of games card and set its inner HTML
 const gamesCard = document.getElementById("num-games");
+gamesCard.innerHTML = `
+    ${GAMES_JSON.length}
+`;
 
 /*************************************************************************************
  * Challenge 5: Add functions to filter the funded and unfunded games
