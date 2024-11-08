@@ -133,14 +133,17 @@ const unfundedGamesCount = GAMES_JSON.filter((game) => {
 
 const displayString = `
     ${ unfundedGamesCount===1 ?
-        `A total of $${totalMoneyRaised} has been raised for ${GAMES_JSON.length} games. Currently, ${unfundedGamesCount} game remains unfunded. We need your help to fund these amazing games!` 
+        `A total of $${totalMoneyRaised} has been raised for ${GAMES_JSON.length} games. Currently, ${unfundedGamesCount} game remains unfunded. 
+        \nWe need your help to fund these amazing games!` 
         :
-        `A total of $${totalMoneyRaised} has been raised for ${GAMES_JSON.length} games. Currently, ${unfundedGamesCount} games remains unfunded. We need your help to fund these amazing games!` 
+        `A total of $${totalMoneyRaised} has been raised for ${GAMES_JSON.length} games. Currently, ${unfundedGamesCount} games remains unfunded. 
+        \nWe need your help to fund these amazing games!` 
     }
 `
 
 const displayStrEle = document.createElement('p');
     displayStrEle.innerText = displayString;
+    displayStrEle.classList.add("hero-text")
 descriptionContainer.appendChild(displayStrEle);
 
 /************************************************************************************
@@ -163,3 +166,14 @@ const secondGameEle = document.createElement('p');
 
 firstGameContainer.appendChild(firstGameEle);
 secondGameContainer.appendChild(secondGameEle);
+
+//
+
+const heroWelcome = document.querySelector('.hero-welcome');
+const tentacleIcon = document.querySelector('#tentacles');
+heroWelcome.addEventListener('mouseover', function () {
+  tentacleIcon.style.transform = 'rotate(-15deg)'
+});
+heroWelcome.addEventListener('mouseleave', function () {
+  tentacleIcon.style.transform = ''
+});
