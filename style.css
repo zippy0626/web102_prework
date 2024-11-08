@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Cabin';
     background-color: #758190;
@@ -8,6 +14,8 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
+
+    --sidePadding: 1.2rem;
 }
 
 #tentacles {
@@ -17,13 +25,8 @@ body {
 #header {
     display: flex;
     background-color: lightblue;
-    padding: 1%;
+    padding: 1rem;
     align-items: center;
-    margin-left: -10px;
-    margin-right: -10px;
-    margin-top: -10px;
-
-    padding-left: 2rem;
 }
 
 .stats-container {
@@ -91,7 +94,6 @@ button {
 /* Logo */
 #tentacles {
     transition: all 300ms;
-
     margin-right: 5px;
 }
 #tentacles:hover {
@@ -123,4 +125,80 @@ button {
 }
 .back-to-top-btn:hover {
     filter: none;
+}
+
+/* Desc Container */
+#description-container {
+    padding-left: var(--sidePadding);
+    
+    width: 100%;
+    height: 380px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.hero-welcome {
+    font-size: 3rem;
+    margin: 0;
+
+    width: fit-content;
+}
+.hero-purpose {
+    font-size: 1.5rem !important;
+}
+.hero-text {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+/* Stats */
+.stats-heading, h1 {
+    margin: .5rem 0 .5rem 0;
+    padding-left: var(--sidePadding);
+}
+.stats-card {
+    padding: 1rem;
+}
+.stats-container {
+    padding: 0 var(--sidePadding) 0 var(--sidePadding);
+}
+.stats-card h3 {
+    margin-bottom: .8rem;
+}
+
+/* Our Games */
+.our-games-heading {
+    margin: 2rem 0 1rem 0;
+
+    text-align: center;
+}
+.our-games-text {
+    font-size: 1.2rem;
+    text-align: center;
+
+    padding-left: var(--sidePadding);
+    margin-bottom: 1.2rem;
+}
+#button-container {
+    margin-bottom: 1.2rem;
+}
+.btn:hover {
+    transform: scale(1.02);
+}
+.btn:active {
+    background-color: rgba(255, 255, 255, 0.709);
+}
+
+.game-card p {
+    margin-bottom: .7rem;
+}
+.game-img {
+    margin-bottom: .5rem;
+}
+.game-card > :first-child {
+    font-weight: bolder;
+    font-size: 1.2rem;
+
+    margin-bottom: 1.2rem;
 }
