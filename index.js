@@ -55,18 +55,18 @@ addGamesToPage(GAMES_JSON);
 const contributionsCard = document.getElementById("num-contributions");
 let totalBackers = GAMES_JSON.reduce((total, game) => {
     return total+=game.backers;
-}, 0);
+}, 0).toLocaleString('en-US');
 contributionsCard.innerHTML = `
-    ${totalBackers.toLocaleString('en-US')}
+    ${totalBackers}
 `;
 
 
 const raisedCard = document.getElementById("total-raised");
 let totalMoneyRaised = GAMES_JSON.reduce((total, game) => {
     return total+=game.pledged
-}, 0);
+}, 0).toLocaleString('en-US');
 raisedCard.innerHTML = `
-    $${totalMoneyRaised.toLocaleString('en-US')}
+    $${totalMoneyRaised}
 `;
 
 
@@ -124,14 +124,25 @@ allBtn.addEventListener('click', showAllGames);
  * Skills used: template literals, ternary operator
  */
 
-// grab the description container
+
 const descriptionContainer = document.getElementById("description-container");
 
-// use filter or reduce to count the number of unfunded games
+const unfundedGamesCount = GAMES_JSON.filter((game) => {
+    return game.pledged < game.goal;
+}).length;
+console.log(unfundedGamesCount);
 
-// create a string that explains the number of unfunded games using the ternary operator
+const displayString = `
+    ${ unfundedGamesCount===1 ?
+        `A total of $${totalMoneyRaised} has been raised for ${GAMES_JSON.length} games. Currently, ${unfundedGamesCount} game remains unfunded. We need your help to fund these amazing games!` 
+        :
+        `A total of $${totalMoneyRaised} has been raised for ${GAMES_JSON.length} games. Currently, ${unfundedGamesCount} games remains unfunded. We need your help to fund these amazing games!` 
+    }
+`
 
-// create a new DOM element containing the template string and append it to the description container
+const displayStrEle = document.createElement('p');
+    displayStrEle.innerText = displayString;
+descriptionContainer.appendChild(displayStrEle);
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
